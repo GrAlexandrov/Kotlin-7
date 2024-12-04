@@ -66,6 +66,12 @@ fun main() {
     println("Processing Api:")
     processApiErrors(logger)
 
-    println(logger.dumpLog())
+    println()
     println(logger.dump())
+    println( dump2(logger))
+}
+
+fun dump2(logger1: ErrorLogger<in Throwable>): List<Pair<LocalDateTime, Any?>> {
+    val a: List<Pair<LocalDateTime, Any?>> = logger1.errors.toList()
+    return a
 }
